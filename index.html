@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Body Health Monitor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Smart Body Health Monitor home">
+        <span class="brand-icon">♥</span>
+        <span>Smart Body<br><b>Health Monitor</b></span>
+      </a>
+      <nav>
+        <button class="nav-link active" data-page="home">⌂ <span>Home</span></button>
+        <button class="nav-link" data-page="scan">▣ <span>Scan</span></button>
+        <button class="nav-link" data-page="history">◷ <span>History</span></button>
+        <button class="nav-link" data-page="about">ⓘ <span>About</span></button>
+      </nav>
+      <p class="sidebar-note">Better awareness<br>for a healthier you</p>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="mobile-brand">♥ Smart Body Health Monitor</div>
+        <div class="profile">● <span>Guest User</span>⌄</div>
+      </header>
+
+      <section id="page-home" class="page active">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">WELCOME TO</p>
+            <h1>Smart Body Health Monitoring System</h1>
+            <h3>Using Contactless Body Scanning</h3>
+            <p class="muted">Upload a body image to explore a software prototype for image-based analysis. No physical contact or dedicated hardware is required.</p>
+            <button class="primary-btn" data-go="scan">⇧ &nbsp; Start Scan</button>
+            <p class="tiny-note">Demo only · Not a medical diagnostic tool</p>
+          </div>
+          <div class="hero-visual">
+            <div class="scan-frame"><div class="person-shape">♙</div><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span></div>
+            <div class="metric-mini"><span class="round-icon pink">♡</span><div><b>Image input</b><small>Upload a photo</small></div></div>
+            <div class="metric-mini"><span class="round-icon blue">⌁</span><div><b>Image processing</b><small>Demo workflow</small></div></div>
+            <div class="metric-mini"><span class="round-icon green">✓</span><div><b>Report preview</b><small>Sample results</small></div></div>
+          </div>
+        </div>
+        <div class="feature-row">
+          <article class="feature-card"><span class="feature-icon">▧</span><h3>Image Upload</h3><p>Choose a JPG, PNG or WEBP image from your device.</p></article>
+          <article class="feature-card"><span class="feature-icon">✦</span><h3>Simple Workflow</h3><p>See a clear demonstration of a scan-to-report journey.</p></article>
+          <article class="feature-card"><span class="feature-icon">▤</span><h3>Scan History</h3><p>Keep demo entries in this browser session.</p></article>
+        </div>
+      </section>
+
+      <section id="page-scan" class="page">
+        <div class="page-heading"><p class="eyebrow">IMAGE INPUT</p><h1>Contactless Body Scan</h1><p class="muted">Upload a clear, front-facing body image to test the interface.</p></div>
+        <div class="scan-layout">
+          <div class="panel upload-panel">
+            <div id="dropzone" class="dropzone">
+              <input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp" hidden />
+              <div id="uploadPlaceholder">
+                <div class="upload-symbol">⇧</div>
+                <h3>Click to upload image</h3>
+                <p>or drag and drop here</p>
+                <small>JPG, PNG, WEBP · Max 5 MB</small>
+              </div>
+              <img id="previewImage" alt="Uploaded body image preview" hidden />
+            </div>
+            <div class="upload-actions">
+              <button class="outline-btn" id="chooseBtn">Choose Image</button>
+              <button class="text-btn" id="clearBtn" disabled>Remove</button>
+            </div>
+            <div id="fileStatus" class="file-status">No image selected.</div>
+            <button id="analyzeBtn" class="primary-btn full" disabled>Analyze Image (Demo)</button>
+            <p class="tiny-note">This prototype does not infer real health measurements from your photo.</p>
+          </div>
+          <aside class="panel tips-panel">
+            <h3>Tips for better results</h3>
+            <ul>
+              <li>Use a clear, well-lit image.</li>
+              <li>Stand straight and face forward.</li>
+              <li>Keep the full body visible where appropriate.</li>
+              <li>Avoid blurry images and strong shadows.</li>
+            </ul>
+            <div class="notice"><b>Privacy note</b><p>Your image is processed locally in this demo page and is not uploaded to a server.</p></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="page-results" class="page">
+        <div class="page-heading results-heading"><div><p class="eyebrow">DEMO OUTPUT</p><h1>Image Analysis Results</h1><p id="scanDate" class="muted">Sample report</p></div><span class="status-pill">Demo complete</span></div>
+        <div class="disclaimer"><b>Important:</b> The cards below are illustrative placeholders, not measurements derived from your uploaded image. A normal camera photo cannot reliably measure blood pressure, blood glucose, oxygen level, temperature or heart rate.</div>
+        <div class="results-layout">
+          <div class="panel image-result"><h3>Uploaded image</h3><img id="resultImage" alt="Selected image" /><p id="resultFilename" class="muted"></p></div>
+          <div class="result-content">
+            <div class="metric-grid">
+              <article class="metric-card"><span class="round-icon pink">♡</span><div><small>Heart rate</small><b>Demo only</b><em>Not measured</em></div></article>
+              <article class="metric-card"><span class="round-icon blue">♨</span><div><small>Temperature</small><b>Demo only</b><em>Not measured</em></div></article>
+              <article class="metric-card"><span class="round-icon aqua">◉</span><div><small>Oxygen level</small><b>Demo only</b><em>Not measured</em></div></article>
+              <article class="metric-card"><span class="round-icon purple">≈</span><div><small>Breathing rate</small><b>Demo only</b><em>Not measured</em></div></article>
+            </div>
+            <div class="panel indicator-panel"><h3>Prototype status</h3><div class="indicator"><span>Image selected</span><b class="good">Complete</b></div><div class="indicator"><span>Image preview</span><b class="good">Available</b></div><div class="indicator"><span>Medical analysis</span><b class="warning">Not performed</b></div></div>
+            <div class="result-actions"><button id="saveBtn" class="primary-btn">＋ Save to History</button><button id="newScanBtn" class="outline-btn">↻ Scan Again</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="page-history" class="page">
+        <div class="page-heading"><p class="eyebrow">YOUR SESSION</p><h1>Scan History</h1><p class="muted">Demo records saved in this browser session.</p></div>
+        <div class="panel history-panel"><div class="history-top"><h3>Recent scans</h3><button id="clearHistoryBtn" class="text-btn">Clear history</button></div><div id="historyList"><div class="empty-state"><span>◷</span><h3>No saved scans yet</h3><p>Upload an image and save a demo report to see it here.</p><button class="outline-btn" data-go="scan">Start a Scan</button></div></div></div>
+      </section>
+
+      <section id="page-about" class="page">
+        <div class="page-heading"><p class="eyebrow">PROJECT OVERVIEW</p><h1>About This Prototype</h1><p class="muted">A software-only college project demonstration.</p></div>
+        <div class="about-grid">
+          <article class="panel"><span class="feature-icon">◎</span><h3>Objective</h3><p>Demonstrate a user-friendly workflow for image upload, preview, and report presentation without special hardware.</p></article>
+          <article class="panel"><span class="feature-icon">⌘</span><h3>Technology</h3><p>HTML for structure, CSS for styling, and JavaScript for image preview, navigation, and demo history.</p></article>
+          <article class="panel"><span class="feature-icon">⚠</span><h3>Limitations</h3><p>This version does not use a trained medical AI model and does not diagnose or calculate real health parameters.</p></article>
+        </div>
+        <div class="panel next-steps"><h3>Possible future improvements</h3><ul><li>Connect a validated computer-vision model for a clearly defined task.</li><li>Add consent, secure storage, and deletion controls if a backend is introduced.</li><li>Validate any medical use with qualified professionals and appropriate clinical evidence.</li></ul></div>
+      </section>
+
+      <footer>Smart Body Health Monitor <span>Educational prototype · Not for medical decisions</span></footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
